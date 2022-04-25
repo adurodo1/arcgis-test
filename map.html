@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body,
+        #viewDiv {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+        }
+      </style>
+      <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
+      <script src="https://js.arcgis.com/4.23/"></script>
+      <!--this is where the view id is accessed-->
+      <script>
+        require(["esri/config","esri/Map", "esri/views/MapView",  "esri/widgets/Locate",], function (esriConfig,Map, MapView,Locate) {
+            
+
+            //the call back executes the imported code
+            //AAPKb790bd618fd24605b5e07d41d5302f1brHiL-LZMzHpR8yGLEditvfMVvXLqQIssBPexuu-pEg0iby2b2flrh9PJer4Dgvpg
+             esriConfig.apiKey = "/AAPKb790bd618fd24605b5e07d41d5302f1brHiL-LZMzHpR8yGLEditvfMVvXLqQIssBPexuu-pEg0iby2b2flrh9PJer4Dgvpg";//api
+                //new  basemap object created
+            const map = new Map({
+            basemap: "arcgis-topographic" // Basemap layer service
+            });
+            const view = new MapView({
+          map: map,
+          center: [-118.805, 34.027], // Longitude, latitude
+          zoom: 13, // Zoom level
+          container: "viewDiv" // Div element
+        });
+
+
+  
+            });
+      </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="viewDiv"></div>
+</body>
+</html>
